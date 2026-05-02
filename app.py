@@ -5,7 +5,10 @@ from src.screens.student_screen import student_screen
 from src.components.dialog_auto_enroll import auto_enroll_dialog
 
 def main():
-    
+    st.set_page_config(
+        page_title="AI Powered Smart Attendance System",
+        page_icon="https://i.ibb.co/YTYGn5qV/logo.png"
+    )
     if 'login_type' not in st.session_state:
         st.session_state['login_type'] = None
         st.session_state['is_logged_in'] = False

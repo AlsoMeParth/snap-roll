@@ -71,3 +71,11 @@ def get_student_subjects(id):
 def get_student_logs(id):
     response = supabase.table('attendance_logs').select("*, subjects(*)").eq("student_id", id).execute()
     return response.data
+
+def create_attendance(logs):
+    response = supabase.table("attendance_logs").insert(logs).execute()
+    return response.data
+
+def get_attendance_for_teacher(id):
+    response = supabase.table("attendance_logs").select("*, subjects!inner(*)").eq('subjects.teacher_id', id).execute()
+    return response.data
