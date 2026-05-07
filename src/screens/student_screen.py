@@ -68,7 +68,7 @@ def student_dashboard():
     footer_dashboard()
 
 def unenroll_btn(student_id, subject_id, subject_code):
-    if st.button("Unenroll from this subject", type="tertiary", width = "stretch"):
+    if st.button("Unenroll from this subject", type="tertiary", width = "stretch", key=f"unenroll_{subject_id}"):
         unenroll_student_from_subject(student_id, subject_id)
         st.toast(f"Unenrolled from {subject_code} successfully!")
         time.sleep(1.5)

@@ -184,17 +184,17 @@ def teacher_tab_manage_subjects():
                 ("👥", "Students", subject['total_students']),
                 ("⏰", "Classes", subject['total_classes'])
             ]
-        def share_btn():
-            if st.button(f"Share Code: {subject['name']}", key = f"share_{subject['subject_code']}", icon = ":material/share:"):
-                share_subject_dialog(subject['name'], subject['subject_code'])
-            st.space()
-        subject_card(
-            name = subject['name'],
-            code = subject['subject_code'],
-            section = subject['section'],
-            stats = stats,
-            footer_callback = share_btn
-        )
+            def share_btn():
+                if st.button(f"Share Code: {subject['name']}", key = f"share_{subject['subject_code']}", icon = ":material/share:"):
+                    share_subject_dialog(subject['name'], subject['subject_code'])
+                st.space()
+            subject_card(
+                name = subject['name'],
+                code = subject['subject_code'],
+                section = subject['section'],
+                stats = stats,
+                footer_callback = share_btn
+            )
     else:
         st.info("No subjects found! Create one above.")
 
@@ -261,8 +261,8 @@ def teacher_screen_login():
     st.header("Login using password", text_alignment = "center")
     st.space()
     st.space()
-    teacher_username = st.text_input(":red[Enter username]", placeholder="Vaibhav")
-    teacher_password = st.text_input(":red[Enter password]", type="password", placeholder="Enter your password")
+    teacher_username = st.text_input(":gray[Enter username]", placeholder="Vaibhav")
+    teacher_password = st.text_input(":gray[Enter password]", type="password", placeholder="Enter your password")
 
     st.divider()
     btncol1, btncol2 = st.columns(2)

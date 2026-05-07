@@ -6,7 +6,7 @@ import io
 def share_subject_dialog(sub_name, sub_code):
     app_domain = "snapclass-ai.streamlit.app"
     join_url = f"{app_domain}/?join-code={sub_code}"
-    st.header("Scan to join")
+    # st.header("Scan to join")
 
     qr = segno.make(join_url)
     out = io.BytesIO()
