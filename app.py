@@ -3,11 +3,13 @@ from src.screens.home_screen import home_screen
 from src.screens.teacher_screen import teacher_screen
 from src.screens.student_screen import student_screen
 from src.components.dialog_auto_enroll import auto_enroll_dialog
+from PIL import Image
 
 def main():
-    st.set_page_config(
+    icon = Image.open("src/img/logo.png")
+    st.set_page_config(          
         page_title="AI Powered Smart Attendance System",
-        page_icon="https://i.ibb.co/YTYGn5qV/logo.png"
+        page_icon=icon 
     )
     if 'login_type' not in st.session_state:
         st.session_state['login_type'] = None
